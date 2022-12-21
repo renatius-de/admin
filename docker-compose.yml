@@ -1,33 +1,6 @@
 version: '3.6'
 
 services:
-  imapfilter:
-    command: imapfilter
-    container_name: imapfilter
-    build:
-      context: ./imapfilter
-    volumes:
-      - ~/.imapfilter:/root/.imapfilter:ro
-    working_dir: /root
-
-  imapfilter_archive:
-    command: imapfilter -c /root/.imapfilter/archive.lua
-    container_name: imapfilter
-    build:
-      context: ./imapfilter
-    volumes:
-      - ~/.imapfilter:/root/.imapfilter:ro
-    working_dir: /root
-
-  imapfilter_daily:
-    command: imapfilter -c /root/.imapfilter/daily.lua
-    container_name: imapfilter
-    build:
-      context: ./imapfilter
-    volumes:
-      - ~/.imapfilter:/root/.imapfilter:ro
-    working_dir: /root
-
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
