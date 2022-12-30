@@ -17,6 +17,4 @@ services:
       DNSSEC: 'true'
     image: 'pihole/pihole:latest'
     network_mode: 'host'
-    volumes:
-      - './etc/pihole:/etc/pihole:rw'
     restart: 'unless-stopped'
