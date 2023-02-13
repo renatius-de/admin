@@ -2,15 +2,17 @@ version: '3.7'
 
 services:
   mail:
+    container_name: 'mail'
     build:
-      context: mail
+      context: ./mail
     environment:
-      MAIL_SERVER: ${MAIL_SERVER}
-      MAIL_USERNAME: ${MAIL_USERNAME}
-      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAIL_SERVER: '${MAIL_SERVER}'
+      MAIL_USERNAME: '${MAIL_USERNAME}'
+      MAIL_PASSWORD: '${MAIL_PASSWORD}'
+    restart: 'unless-stopped'
 
-  pihole:
-    container_name: 'pihole'
+  dns:
+    container_name: 'dns'
     dns:
       - '127.0.0.1'
       - '::1'
