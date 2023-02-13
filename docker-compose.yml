@@ -1,6 +1,14 @@
 version: '3.7'
 
 services:
+  mail:
+    build:
+      context: mail
+    environment:
+      MAIL_SERVER: ${MAIL_SERVER}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+
   pihole:
     container_name: 'pihole'
     dns:
