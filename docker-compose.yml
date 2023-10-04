@@ -1,17 +1,5 @@
 ---
-version: '3.7'
-
 services:
-  mail:
-    container_name: 'mail'
-    build:
-      context: ./mail
-    environment:
-      MAIL_SERVER: '${MAIL_SERVER}'
-      MAIL_USERNAME: '${MAIL_USERNAME}'
-      MAIL_PASSWORD: '${MAIL_PASSWORD}'
-    restart: 'unless-stopped'
-
   dns:
     container_name: 'dns'
     dns:

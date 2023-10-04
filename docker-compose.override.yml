@@ -1,0 +1,10 @@
+---
+services:
+  linter:
+    image: github/super-linter:latest
+    env_file:
+      - ./.github/super-linter.env
+    environment:
+      RUN_LOCAL: true
+    volumes:
+      - .:/tmp/lint:rw
