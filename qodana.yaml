@@ -1,0 +1,9 @@
+---
+version: "1.0"
+profile:
+  name: qodana.recommended
+include:
+  - name: CheckDependencyLicenses
+  - name: VulnerableLibrariesGlobal
+fixesStrategy: cleanup/apply
+linter: jetbrains/qodana-jvm:latest
