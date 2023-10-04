@@ -31,3 +31,8 @@ jobs:
         uses: super-linter/super-linter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Qodana Scan
+        uses: JetBrains/qodana-action@v2023.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
